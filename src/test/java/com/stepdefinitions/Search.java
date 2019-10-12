@@ -66,11 +66,18 @@ public class Search  extends Base {
 	public void user_should_enter_details() {
 		 
 		EcommDetails d1=new EcommDetails();
-		 fill(d1.getFname(), "maha");
-		 fill(d1.getFname(),"m");
-		 fill(d1.getDetails(),"mahagroup");
-		 fill(d1.getStreetaddress(),"toraipakkam");
-		 fill(d1.getStreetaddress(),"perumbakkam");
+		
+		
+		
+		
+		
+		
+		
+		 fill(d1.getFname(),valuefromExcelSheet().get(1).get("fname"));
+		 fill(d1.getLname(),valuefromExcelSheet().get(1).get("lname"));
+		 fill(d1.getDetails(),valuefromExcelSheet().get(1).get("company"));
+		 fill(d1.getStreetaddress(),valuefromExcelSheet().get(1).get("address"));
+		 fill(d1.getStreetaddress2(),valuefromExcelSheet().get(1).get("address2"));
 		 
 		 
 		 

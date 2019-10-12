@@ -25,16 +25,16 @@ private WebElement addtocart;
 private WebElement size;
 @FindBy(xpath="//button[@class='checkout-button checkout-button-checkout']")
 private WebElement chechout;
-@FindBy(id=("ShipAddress_FirstName"))
-private WebElement fname;
+//@FindBy(id=("ShipAddress_FirstName"))
+//private WebElement fname;
 
 
 
 
 
-public WebElement getFname() {
-	return fname;
-}
+//public WebElement getFname() {
+	//return fname;
+//}
 public WebElement getChechout() {
 	return chechout;
 }

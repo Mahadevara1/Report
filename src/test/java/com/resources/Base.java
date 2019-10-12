@@ -8,7 +8,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -50,6 +53,14 @@ public class Base {
 		driver.get(url);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void fill(WebElement e, String s) {
 		
 		e.sendKeys(s);
@@ -65,34 +76,7 @@ public class Base {
 	public static void quitBrowser() {
 		driver.quit();
 	}
-	public static String getDataFromExcel(int rowNo,int cellNo) throws IOException {
-		String name=null;
-		File f=new File("C:\\Users\\HP\\eclipse-workspace\\EcomDomain\\testdata\\Ecommdata.xlsx");
-		FileInputStream stream=new FileInputStream(f);
-		Workbook w=new XSSFWorkbook(stream);
-		Sheet s = w.getSheet("Sheet1");
-		Row r = s.getRow(rowNo);
-		Cell c = r.getCell(cellNo);
-		int type = c.getCellType();
-		if(type==1) {
-			 name = c.getStringCellValue();
-			}
-		
-		else if(type==0) {
-			if(DateUtil.isCellDateFormatted(c)) {
-				Date dateCellValue = c.getDateCellValue();
-				//System.out.println(dateCellValue);
-				SimpleDateFormat sim=new SimpleDateFormat("dd-MMM-yy");
-				 name = sim.format(dateCellValue);
-			}
-			else {
-				double numericCellValue = c.getNumericCellValue();
-				long l=(long)numericCellValue;
-				name = String.valueOf(l);
-			}
-		}
-		return name;
-}
+	
 	
 	public static void mouseHover(WebElement e) {
 		Actions acc=new Actions(driver);
@@ -113,4 +97,59 @@ public class Base {
 		JavascriptExecutor jk=(JavascriptExecutor)driver;
 		jk.executeScript("arguments[0].click()",e);
 	}
+	
+	public static List<HashMap<String, String>>  valuefromExcelSheet()
+	{
+		List<HashMap<String, String>> mapDatasList=new ArrayList<HashMap<String,String>>();
+		try {
+			File excelLocation=new File("C:\\Users\\HP\\eclipse-workspace\\EcomDomain\\testdata\\Ecommdata.xlsx");
+			
+			FileInputStream f=new FileInputStream(excelLocation);
+			Workbook w=new XSSFWorkbook(f);
+			Sheet sheet=w.getSheet("Sheet1");
+			Row headerRow=sheet.getRow(0);
+			for (int i =0; i < sheet.getPhysicalNumberOfRows(); i++) {
+				Row currentRow=sheet.getRow(i);
+				HashMap<String, String> mapDatas=new HashMap<String, String>();
+				for (int j = 0; j < headerRow.getPhysicalNumberOfCells(); j++) {
+					Cell currentCell=currentRow.getCell(j);
+					
+						switch(currentCell.getCellType()) {
+						
+							case Cell.CELL_TYPE_STRING:
+							mapDatas.put(headerRow.getCell(j).getStringCellValue(), currentCell.getStringCellValue());
+							break;
+							
+							case Cell.CELL_TYPE_NUMERIC:
+							mapDatas.put(headerRow.getCell(j).getStringCellValue(), String.valueOf(currentCell.getNumericCellValue()));
+							break;
+					}
+					
+				}
+				mapDatasList.add(mapDatas);
+			}
+			
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		
+		
+		return mapDatasList;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
