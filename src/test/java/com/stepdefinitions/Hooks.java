@@ -10,7 +10,7 @@ import com.resources.Base;
 		@Before
 		public static void beforeScenario() {
 			 launchBrowser();
-		//loadUrl("https://www.patpat.com/");
+		
 				
 				
 				
@@ -18,7 +18,7 @@ import com.resources.Base;
 		}
 		@After
 		public void afterScenario() {
-			//quitBrowser();
+			quitBrowser();
 		}
 
 	}

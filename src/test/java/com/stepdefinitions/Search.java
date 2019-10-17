@@ -19,12 +19,7 @@ public class Search  extends Base {
 	public void user_shuold_enter_the_paroduct_name() throws InterruptedException, Throwable {
 		EcomSearch e=new EcomSearch();
 		loadUrl("https://www.tactics.com/");
-		/*Robot r = new Robot();
-		r.keyPress(KeyEvent.VK_TAB);
-		r.keyPress(KeyEvent.VK_TAB);
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(5000);*/
+		
 		
 		fill(e.getSearch(), "baby");
 		

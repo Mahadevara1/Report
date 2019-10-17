@@ -1,0 +1,134 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6819175820,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Title of your scenario",
+        "description": "",
+        "id": "title-of-your-feature;title-of-your-scenario",
+        "after": [
+          {
+            "result": {
+              "duration": 672686824,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9745077521,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user shuold enter the paroduct name",
+            "match": {
+              "location": "Search.user_shuold_enter_the_paroduct_name()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3114935473,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user should click sear button",
+            "match": {
+              "location": "Search.user_should_click_sear_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2279719015,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user shuold click babygirl dress",
+            "match": {
+              "location": "Search.user_shuold_click_babygirl_dress()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3527087154,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user shuld click the add to cart button",
+            "match": {
+              "location": "Search.user_shuld_click_the_add_to_cart_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4377398083,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user should click chechout button",
+            "match": {
+              "location": "Search.user_should_click_chechout_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2313186583,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user should enter details",
+            "match": {
+              "location": "Search.user_should_enter_details()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag"
+          },
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "Title of your feature",
+    "description": "  I want to use this template for my feature file",
+    "id": "title-of-your-feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/ecomm.feature",
+    "tags": [
+      {
+        "name": "@tag",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
